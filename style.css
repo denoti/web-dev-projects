@@ -15,7 +15,7 @@ ul > li {
   font-size: 2rem;
   list-style: none;
 }
-a {
+ul > li > a {
   text-decoration: none;
   color: inherit;
 }
