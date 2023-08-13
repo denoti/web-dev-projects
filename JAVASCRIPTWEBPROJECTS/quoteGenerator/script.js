@@ -5,8 +5,6 @@ const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 const loader = document.getElementById('loader');
 
-console.log(quoteContainer);
-
 let apiQuotes = [];
 
 // Show loading
@@ -27,7 +25,6 @@ function newQuote() {
   // to pick a random quote from quote arrays
   let randomQuote = Math.floor(Math.random() * apiQuotes.length);
   const quote = apiQuotes[randomQuote];
-  console.log(quote);
 
   // Check if Author Field is Blank and replace it with Unknown
   function fixAuthorName() {
@@ -61,6 +58,8 @@ async function getQuotes() {
     newQuote();
   } catch (error) {
     // Handle error here
+    complete();
+    authorText.textContent = 'Could not Fetch Quotes!';
   }
 }
 
