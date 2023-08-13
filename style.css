@@ -27,6 +27,7 @@ ul > li {
   outline: none;
   background: #888192;
   max-width: max-content;
+  margin-top: 10px;
 }
 ul > li > a {
   text-decoration: none;
