@@ -31,6 +31,7 @@ ul li {
   outline: none;
   background: #888192;
   max-width: max-content;
+width: 80px;
   margin-top: 10px;
 }
 ul li a {
@@ -45,15 +46,15 @@ ul li a {
     grid-template-columns: auto auto;
     gap: 10px;
   }
-  ul > li {
+  ul li {
     text-align: center;
     padding: 5px;
     max-width: max-content;
   }
-  ul > li > a {
+  ul li a {
     font-size: 1.3rem;
   }
-  header > h1 {
+  header h1 {
     font-size: 1.5rem;
   }
 }
