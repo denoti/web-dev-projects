@@ -10,15 +10,19 @@ body {
 }
 
 header {
-  max-width: max-content;
+  width: 80vw;
 }
 
 ul {
   display: grid;
   grid-template-columns: 300px 300px;
+  place-content: center;
+}
+main {
+  width: 80vw;
 }
 
-ul > li {
+ul li {
   font-size: 2rem;
   list-style: none;
   border-radius: 10px;
@@ -29,7 +33,7 @@ ul > li {
   max-width: max-content;
   margin-top: 10px;
 }
-ul > li > a {
+ul li a {
   text-decoration: none;
   color: inherit;
   line-height: 40px;
