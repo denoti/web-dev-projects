@@ -31,7 +31,7 @@ function setAttributes(element, attributes) {
 // Create Elements For links & Photos, Add to DOM
 function displayPhotos() {
   imagesLoaded = 0;
-  totalImages = photosArray.length();
+  totalImages = photosArray.length;
   // Run function for each object in photosArray
   photosArray.forEach((photo) => {
     // Create <a> to link to Unsplash
@@ -59,11 +59,9 @@ function displayPhotos() {
 
 // Get photos from Unsplash API
 async function getPhotos() {
-  console.log('hello');
   try {
     const response = await fetch(apiUrl);
     photosArray = await response.json();
-    console.log(photosArray);
     displayPhotos();
   } catch (error) {
     // Catch Error Here
