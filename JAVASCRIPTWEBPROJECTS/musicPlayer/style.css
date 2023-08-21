@@ -25,20 +25,20 @@ body {
   box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
 }
 
-.img-container img {
+.img-container {
   height: 300px;
   width: 300px;
   position: relative;
   top: -50px;
   left: 50px;
-  border-radius: 20px;
-  box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
 }
 
-.image-container img {
+.img-container img {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px 5px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
@@ -109,10 +109,11 @@ h3 {
 /* Media Query: iPhone (Vertical) */
 @media screen and (max-width: 376px) {
   .player-container {
-    width: 95vw;
+    width: 90vw;
   }
   .img-container {
-    left: 29px;
+    width: 70vw;
+    left: 30px;
   }
 
   h2 {
