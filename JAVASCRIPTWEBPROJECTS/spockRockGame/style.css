@@ -51,6 +51,22 @@ h2 {
   user-select: none;
 }
 
+#player .far,
+#player .choice {
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+#computer .far,
+#computer .choice {
+  color: rgb(235, 43, 52);
+}
+
+#player .far:last-of-type,
+#computer .far:last-of-type {
+  margin-right: 0;
+}
+
 .reset-icon {
   font-size: 30px;
   cursor: pointer;
