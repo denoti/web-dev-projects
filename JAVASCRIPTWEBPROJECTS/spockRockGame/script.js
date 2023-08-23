@@ -18,6 +18,8 @@ const computerSpock = document.getElementById('computerSpock');
 
 const allGameIcons = document.querySelectorAll('.far');
 
+const resetBtn = document.querySelector('.reset-icon');
+
 const choices = {
   rock: { name: 'Rock', defeats: ['scissors', 'lizard'] },
   paper: { name: 'Paper', defeats: ['rock', 'spock'] },
@@ -35,6 +37,19 @@ function resetSelected() {
     icon.classList.remove('selected');
   });
 }
+
+// Reset Score & playerChoice/computerChoice
+function resetAll() {
+  playerScoreNumber = 0;
+  computerScoreNumber = 0;
+  playerScoreEl.textContent = playerScoreNumber;
+  computerScoreEl.textContent = computerScoreNumber;
+  playerChoiceEl.textContent = '';
+  computerChoiceEl.textContent = '';
+  resultText.textContent = '';
+  resetSelected();
+}
+window.resetAll = resetAll;
 
 // Random computer choice
 function computerRandomChoice() {
@@ -87,11 +102,19 @@ function displayComputerChoice() {
 
 // Check result, increase scores, update the result texts
 function updateScore(playerChoice) {
-  console.log(playerChoice, computerChoice);
   if (playerChoice === computerChoice) {
     resultText.textContent = "It's a tie.";
   } else {
-    const choice  = choices
+    const choice = choices[playerChoice];
+    if (choice.defeats.indexOf(computerChoice) > -1) {
+      resultText.textContent = 'You Won!';
+      playerScoreNumber++;
+      playerScoreEl.textContent = playerScoreNumber;
+    } else {
+      resultText.textContent = 'You Lost!';
+      computerScoreNumber++;
+      computerScoreEl.textContent = computerScoreNumber;
+    }
   }
 }
 
@@ -137,3 +160,14 @@ function select(playerChoice) {
       break;
   }
 }
+
+playerRock.onclick = () => select('rock');
+playerPaper.onclick = () => select('paper');
+playerScissors.onclick = () => select('scissors');
+playerLizard.onclick = () => select('lizard');
+playerSpock.onclick = () => select('spock');
+
+resetBtn.onclick = () => resetAll();
+
+// On startup, set initial values
+resetAll();
